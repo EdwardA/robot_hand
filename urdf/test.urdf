@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<robot name="robot_hand">
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.01" radius="0.06"/>
+      </geometry>
+    </visual>
+  </link>
+  
+  <link name="fore_finger_metacarpal">
+    <visual>
+      <geometry>
+        <cylinder length="0.0645" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.03225"/>
+    </visual>
+  </link>
+  
+  <link name="middle_finger_metacarpal">
+    <visual>
+      <geometry>
+        <cylinder length="0.0633" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.03165"/>
+    </visual>
+  </link>
+
+  <link name="ring_finger_metacarpal">
+    <visual>
+      <geometry>
+        <cylinder length="0.05854" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.02927"/>
+    </visual>
+  </link>
+  
+  <link name="little_finger_metacarpal">
+    <visual>
+      <geometry>
+        <cylinder length="0.05293" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.026465"/>
+    </visual>
+  </link>
+  
+  
+  
+  
+  <!-- Joints -->
+  <joint name="base_to_fore_finger" type="fixed">
+    <parent link="base_link"/>
+    <child link="fore_finger_metacarpal"/>
+    <origin rpy="0 -0.1193805 0" xyz="-0.0085 0 0"/>
+  </joint>
+  
+  <joint name="base_to_middle_finger" type="fixed">
+    <parent link="base_link"/>
+    <child link="middle_finger_metacarpal"/>
+    <origin rpy="0 0.03961897 0" xyz="0 0 0"/>
+  </joint>
+  
+  <joint name="base_to_ring_finger" type="fixed">
+    <parent link="base_link"/>
+    <child link="ring_finger_metacarpal"/>
+    <origin rpy="0 0.2303835 0" xyz="0.00403 0 0"/>
+  </joint>
+  
+  <joint name="base_to_little_finger" type="fixed">
+    <parent link="base_link"/>
+    <child link="little_finger_metacarpal"/>
+    <origin rpy="0 0.45186574 0" xyz="0.01154 0 0"/>
+  </joint>
+  
+
+
+  
+</robot>

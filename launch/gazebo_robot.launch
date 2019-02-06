@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <param name="robot_description" command="cat '$(find robot_hand)/urdf/hand_shape.urdf'" />
+  
+  <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-urdf -param robot_description -model m2wr" />
+</launch>
