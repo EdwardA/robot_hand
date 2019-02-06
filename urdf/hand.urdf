@@ -1,0 +1,361 @@
+<?xml version="1.0"?>
+<robot name="robot_hand">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.01" radius="0.06"/>
+      </geometry>
+    </visual>
+  </link>
+  
+  <!-- metacarpal -->
+  
+  <link name="thumb_metacarpal_zero">
+    <visual>
+      <geometry>
+        <cylinder length="0.0" radius="0.015"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0"/>
+    </visual>
+  </link>
+  
+  <link name="thumb_metacarpal">
+    <visual>
+      <geometry>
+        <cylinder length="0.03702" radius="0.015"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.01851"/>
+    </visual>
+  </link>
+
+  <link name="fore_finger_metacarpal">
+    <visual>
+      <geometry>
+        <cylinder length="0.0645" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.03225"/>
+    </visual>
+  </link>
+  
+  <link name="middle_finger_metacarpal">
+    <visual>
+      <geometry>
+        <cylinder length="0.0633" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.03165"/>
+    </visual>
+  </link>
+
+  <link name="ring_finger_metacarpal">
+    <visual>
+      <geometry>
+        <cylinder length="0.05854" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.02927"/>
+    </visual>
+  </link>
+  
+  <link name="little_finger_metacarpal">
+    <visual>
+      <geometry>
+        <cylinder length="0.05293" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.026465"/>
+    </visual>
+  </link>
+  
+  <!-- proximal -->
+  
+  <link name="thumb_proximal">
+    <visual>
+      <geometry>
+        <cylinder length="0.040" radius="0.015"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.020"/>
+    </visual>
+  </link>
+  
+  <link name="fore_finger_proximal">
+    <visual>
+      <geometry>
+        <cylinder length="0.033" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0165"/>
+    </visual>
+  </link>
+  
+  <link name="middle_finger_proximal">
+    <visual>
+      <geometry>
+        <cylinder length="0.033" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0165"/>
+    </visual>
+  </link>
+  
+  <link name="ring_finger_proximal">
+    <visual>
+      <geometry>
+        <cylinder length="0.033" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0165"/>
+    </visual>
+  </link>
+  
+  <link name="little_finger_proximal">
+    <visual>
+      <geometry>
+        <cylinder length="0.033" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0165"/>
+    </visual>
+  </link>
+  
+  <!-- Intermediate bone -->
+  
+  <link name="fore_finger_inter">
+    <visual>
+      <geometry>
+        <cylinder length="0.025" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0125"/>
+    </visual>
+  </link>
+  
+  <link name="middle_finger_inter">
+    <visual>
+      <geometry>
+        <cylinder length="0.025" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0125"/>
+    </visual>
+  </link>
+  
+  <link name="ring_finger_inter">
+    <visual>
+      <geometry>
+        <cylinder length="0.025" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0125"/>
+    </visual>
+  </link>
+  
+  <link name="little_finger_inter">
+    <visual>
+      <geometry>
+        <cylinder length="0.025" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0125"/>
+    </visual>
+  </link>
+  
+    <!-- Distal bone -->
+    
+    <link name="thumb_distal">
+    <visual>
+      <geometry>
+        <cylinder length="0.030" radius="0.015"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0150"/>
+    </visual>
+  </link>
+    
+  <link name="fore_finger_distal">
+    <visual>
+      <geometry>
+        <cylinder length="0.025" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0125"/>
+    </visual>
+  </link>
+  
+  <link name="middle_finger_distal">
+    <visual>
+      <geometry>
+        <cylinder length="0.025" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0125"/>
+    </visual>
+  </link>
+  
+  <link name="ring_finger_distal">
+    <visual>
+      <geometry>
+        <cylinder length="0.025" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0125"/>
+    </visual>
+  </link>
+  
+  <link name="little_finger_distal">
+    <visual>
+      <geometry>
+        <cylinder length="0.025" radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0125"/>
+    </visual>
+  </link>
+  
+  
+  
+  <!-- fixed Joints -->
+  
+  <joint name="base_to_fore_finger" type="fixed">
+    <parent link="base_link"/>
+    <child link="fore_finger_metacarpal"/>
+    <origin rpy="0 -0.1193805 0" xyz="-0.0085 0 0"/>
+  </joint>
+  
+  <joint name="base_to_middle_finger" type="fixed">
+    <parent link="base_link"/>
+    <child link="middle_finger_metacarpal"/>
+    <origin rpy="0 0.03961897 0" xyz="0 0 0.0"/>
+  </joint>
+  
+  <joint name="base_to_ring_finger" type="fixed">
+    <parent link="base_link"/>
+    <child link="ring_finger_metacarpal"/>
+    <origin rpy="0 0.2303835 0" xyz="0.00403 0 0"/>
+  </joint>
+  
+  <joint name="base_to_little_finger" type="fixed">
+    <parent link="base_link"/>
+    <child link="little_finger_metacarpal"/>
+    <origin rpy="0 0.45186574 0" xyz="0.01154 0 0"/>
+  </joint>
+
+  
+  <joint name="base_to_thumb" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="base_link"/>
+    <child link="thumb_metacarpal_zero"/>
+    <origin rpy="0 -0.78958695 0" xyz="-0.001181 0 0"/>
+  </joint>
+  
+  <joint name="thumb_meta_to_proximal_zero" type="revolute">
+    <axis xyz="0 1 1"/>
+    <limit effort="1000.0" lower="0.0" upper="0.3" velocity="0.5"/>
+    <parent link="thumb_metacarpal_zero"/>
+    <child link="thumb_metacarpal"/>
+    <origin rpy="0 0 0" xyz="0 0 0.0"/>
+  </joint>
+  
+  <joint name="thumb_meta_to_proximal" type="revolute">
+    <axis xyz="1 0 1"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="thumb_metacarpal"/>
+    <child link="thumb_proximal"/>
+    <origin rpy="0 0 0" xyz="0 0 0.03702"/>
+  </joint>
+  
+  <joint name="fore_finger_meta_to_proximal" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="fore_finger_metacarpal"/>
+    <child link="fore_finger_proximal"/>
+    <origin rpy="0 0 0" xyz="0 0 0.0645"/>
+  </joint>
+  
+  <joint name="middle_finger_meta_to_proximal" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="middle_finger_metacarpal"/>
+    <child link="middle_finger_proximal"/>
+    <origin rpy="0 0 0" xyz="0 0 0.0633"/>
+  </joint>
+  
+  <joint name="ring_finger_meta_to_proximal" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="ring_finger_metacarpal"/>
+    <child link="ring_finger_proximal"/>
+    <origin rpy="0 0 0" xyz="0 0 0.05854"/>
+  </joint>
+  
+  <joint name="little_finger_meta_to_proximal" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="little_finger_metacarpal"/>
+    <child link="little_finger_proximal"/>
+    <origin rpy="0 0 0" xyz="0 0 0.05293"/>
+  </joint>
+  
+  
+  
+  <joint name="fore_finger_proximal_to_inter" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="fore_finger_proximal"/>
+    <child link="fore_finger_inter"/>
+    <origin rpy="0 0 0" xyz="0 0 0.033"/>
+  </joint>
+  
+  <joint name="middle_finger_proximal_to_inter" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="middle_finger_proximal"/>
+    <child link="middle_finger_inter"/>
+    <origin rpy="0 0 0" xyz="0 0 0.033"/>
+  </joint>
+  
+  <joint name="ring_finger_proximal_to_inter" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="ring_finger_proximal"/>
+    <child link="ring_finger_inter"/>
+    <origin rpy="0 0 0" xyz="0 0 0.033"/>
+  </joint>
+  
+  <joint name="little_finger_proximal_to_inter" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="little_finger_proximal"/>
+    <child link="little_finger_inter"/>
+    <origin rpy="0 0 0" xyz="0 0 0.033"/>
+  </joint>
+  
+  
+  <joint name="fore_finger_inter_to_distal" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="fore_finger_inter"/>
+    <child link="fore_finger_distal"/>
+    <origin rpy="0 0 0" xyz="0 0 0.025"/>
+  </joint>
+  
+  <joint name="middle_finger_inter_to_distal" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="middle_finger_inter"/>
+    <child link="middle_finger_distal"/>
+    <origin rpy="0 0 0" xyz="0 0 0.025"/>
+  </joint>
+  
+  <joint name="ring_finger_inter_to_distal" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="ring_finger_inter"/>
+    <child link="ring_finger_distal"/>
+    <origin rpy="0 0 0" xyz="0 0 0.025"/>
+  </joint>
+  
+  <joint name="little_finger_inter_to_distal" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="little_finger_inter"/>
+    <child link="little_finger_distal"/>
+    <origin rpy="0 0 0" xyz="0 0 0.025"/>
+  </joint>
+  
+  <joint name="thumb_meta_to_distal" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708" velocity="0.5"/>
+    <parent link="thumb_proximal"/>
+    <child link="thumb_distal"/>
+    <origin rpy="0 0 0" xyz="0 0 0.03702"/>
+  </joint>
+
+
+  
+</robot>
