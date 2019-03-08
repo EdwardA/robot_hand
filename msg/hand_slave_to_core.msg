@@ -1,0 +1,33 @@
+Header header
+
+float32 fore_finger_joint_one_pitch
+float32 fore_finger_joint_one_yaw
+float32 fore_finger_joint_two
+float32 fore_finger_joint_three
+float32 fore_finger_pres_prox
+float32 fore_finger_pres_inter
+float32 fore_finger_pres_dist
+
+float32 middle_finger_joint_one_pitch
+float32 middle_finger_joint_one_yaw
+float32 middle_finger_joint_two
+float32 middle_finger_joint_three
+float32 middle_finger_pres_prox
+float32 middle_finger_pres_inter
+float32 middle_finger_pres_dist
+
+float32 ring_finger_joint_one_pitch
+float32 ring_finger_joint_one_yaw
+float32 ring_finger_joint_two
+float32 ring_finger_joint_three
+float32 ring_finger_pres_prox
+float32 ring_finger_pres_inter
+float32 ring_finger_pres_dist
+
+float32 little_finger_joint_one_pitch
+float32 little_finger_joint_one_yaw
+float32 little_finger_joint_two
+float32 little_finger_joint_three
+float32 little_finger_pres_prox
+float32 little_finger_pres_inter
+float32 little_finger_pres_dist

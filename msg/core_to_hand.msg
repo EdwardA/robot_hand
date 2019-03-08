@@ -1,0 +1,21 @@
+Header header
+
+float32 fore_finger_joint_onesp_pitch
+float32 fore_finger_joint_onesp_yaw
+float32 fore_finger_joint_twosp
+float32 fore_finger_joint_threesp
+
+float32 middle_finger_joint_onesp_pitch
+float32 middle_finger_joint_onesp_yaw
+float32 middle_finger_joint_twosp
+float32 middle_finger_joint_threesp
+
+float32 ring_finger_joint_onesp_pitch
+float32 ring_finger_joint_onesp_yaw
+float32 ring_finger_joint_twosp
+float32 ring_finger_joint_threesp
+
+float32 little_finger_joint_onesp_pitch
+float32 little_finger_joint_onesp_yaw
+float32 little_finger_joint_twosp
+float32 little_finger_joint_threesp
