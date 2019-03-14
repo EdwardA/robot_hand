@@ -6,7 +6,7 @@ void setup() {
   myPID2.SetMode(AUTOMATIC);
   myPID2.SetSampleTime(1);
   myPID2.SetOutputLimits(-255, 255);
-  Serial.begin (115200);
+  //Serial.begin (115200);
   //analogReadResolution(12);
   //analogWriteResolution(12);
   analogWriteFrequency(2, 234375);
@@ -19,7 +19,6 @@ void setup() {
   pinMode(5, OUTPUT);
   pinMode(6, INPUT);
 
-  nh.initNode();
-  nh.advertise(hand_state);
+  ROSsetup();
 
 }

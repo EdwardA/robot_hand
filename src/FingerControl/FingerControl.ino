@@ -1,13 +1,25 @@
+#include <PID_v1.h>
 #include <ros.h>
 #include <ros/time.h>
-#include <robot_hand/hand_to_core_js.h>
-#include <PID_v1.h>
+#include <std_msgs/String.h>
+#include <sensor_msgs/JointState.h>
+
+char* id = "/myBot";
+char *a[] = {"fore_finger_joint_one_pitch", "fore_finger_joint_one_yaw", "fore_finger_joint_two", "fore_finger_joint_three"}; // F: Front - B: Back - R: Right - L: Left
+float pos[4]; /// stores arduino time
+float vel[4];
+float eff[4];
+
+ros::NodeHandle  nh;
+
+sensor_msgs::JointState hand;
 
 
-ros::NodeHandle nh;
-float pos1;
-robot_hand::hand_to_core_js Hand;
-ros::Publisher hand_state("bob", &Hand);
+ros::Publisher hand_state("bob", &hand);
+
+float mapfloat(float x, float in_min, float in_max, float out_min, float out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
 
 char potOne;
 char potTwo;
@@ -44,10 +56,10 @@ void loop() {
   input2 = pot4;
   if (digitalRead(6) == LOW){
     setpoint2 = pot2SP;
-    Serial.println("independant mode");
+    //Serial.println("independant mode");
   }else{
     setpoint2 = setpoint;
-    Serial.println("curl mode");
+    //Serial.println("curl mode");
   }
   //setpoint2 = pot2SP;
   myPID2.Compute();
@@ -57,12 +69,13 @@ void loop() {
   potPrint(2, pot2SP);
   potPrint(4, pot4);
 
-  Serial.print("output1: ");
-  Serial.println(output);
-  Serial.print("output2: ");
-  Serial.println(output2);
+  //Serial.print("output1: ");
+  //Serial.println(output);
+  //Serial.print("output2: ");
+  //Serial.println(output2);
 
-  Serial.println();
+  //Serial.println();
   //delay(100);
+  ROSloop(pot1, pot2, pot3, pot4);
 
 }
