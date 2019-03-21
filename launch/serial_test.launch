@@ -5,5 +5,5 @@
     	
     </node>
 
-	<node pkg="rqt_graph" type="rqt_graph" name="rqt_graph" respawn="false"/>
+	<!-- <node pkg="rqt_graph" type="rqt_graph" name="rqt_graph" respawn="false"/> -->
 </launch>

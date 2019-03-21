@@ -4,7 +4,7 @@
 #include <sensor_msgs/JointState.h>
 
 char* id = "/myBot";
-char *a[] = {"fore_finger_joint_one_pitch", "fore_finger_joint_one_yaw", "fore_finger_joint_two", "fore_finger_joint_three"}; // F: Front - B: Back - R: Right - L: Left
+char *a[] = {"fore_finger_proximal_to_inter", "fore_finger_joint_one_yaw", "fore_finger_joint_two", "fore_finger_joint_three"}; // F: Front - B: Back - R: Right - L: Left
 float pos[4]; /// stores arduino time
 float vel[4];
 float eff[4];
