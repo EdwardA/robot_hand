@@ -1,0 +1,149 @@
+<robot
+  name="robot_hand_2">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0165545450435012 -0.0675519534825143 0.0551699672725438"
+        rpy="0 0 0" />
+      <mass
+        value="0.14112771415944" />
+      <inertia
+        ixx="9.77781538334822E-05"
+        ixy="-4.68047592445247E-09"
+        ixz="-9.9251400712229E-06"
+        iyy="0.000112859815970869"
+        iyz="-7.23848447491276E-08"
+        izz="4.73899241412088E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand_2/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand_2/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="thumb_meta">
+    <inertial>
+      <origin
+        xyz="1.99885584290863E-05 0.0274753594946916 3.11523535328345E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0120616204231855" />
+      <inertia
+        ixx="1.74601912220389E-06"
+        ixy="-6.03789807030541E-09"
+        ixz="5.80816723565896E-10"
+        iyy="4.01364324711719E-07"
+        iyz="7.34091845896723E-09"
+        izz="2.14539224199729E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand_2/meshes/thumb_meta.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand_2/meshes/thumb_meta.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_to_thumb"
+    type="continuous">
+    <origin
+      xyz="0.023209760005139 -0.0675469356726254 0.0198747840085588"
+      rpy="0 1.12023021500415 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="thumb_meta" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="thumb_prox">
+    <inertial>
+      <origin
+        xyz="-0.00044913745032139 -2.31628824276242E-05 0.0206126250095581"
+        rpy="0 0 0" />
+      <mass
+        value="0.0202607227265754" />
+      <inertia
+        ixx="7.97832295599946E-06"
+        ixy="-1.13669461870208E-09"
+        ixz="5.03469939308632E-07"
+        iyy="8.58936112642717E-06"
+        iyz="-1.97120922562684E-09"
+        izz="6.1306893246727E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand_2/meshes/thumb_prox.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand_2/meshes/thumb_prox.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thumb_meta-to_prox"
+    type="continuous">
+    <origin
+      xyz="0 0.0410000000000158 0"
+      rpy="1.70910549048477 -4.44089209850063E-16 3.14159265358979" />
+    <parent
+      link="thumb_meta" />
+    <child
+      link="thumb_prox" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>

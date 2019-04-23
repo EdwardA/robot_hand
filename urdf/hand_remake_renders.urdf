@@ -1,0 +1,838 @@
+<robot
+  name="hand_remake_renders">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0161938320188902 -0.0675517946069913 0.0566942623017759"
+        rpy="0 0 0" />
+      <mass
+        value="0.145742252598535" />
+      <inertia
+        ixx="0.000108337180804247"
+        ixy="-4.42503626036578E-09"
+        ixz="-7.699092591204E-06"
+        iyy="0.000124743842930029"
+        iyz="-7.34642773832096E-08"
+        izz="4.87149243546208E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="thumb_meta">
+    <inertial>
+      <origin
+        xyz="3.54579893944718E-05 0.0296060889397809 0.00118047417000397"
+        rpy="0 0 0" />
+      <mass
+        value="0.0105969873086149" />
+      <inertia
+        ixx="1.71469578578689E-06"
+        ixy="6.63854404146747E-09"
+        ixz="-1.29745418023376E-10"
+        iyy="2.75598636814296E-07"
+        iyz="-1.89792482555603E-07"
+        izz="1.44108511822397E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/thumb_meta.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/thumb_meta.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thumb_meta_to_base"
+    type="continuous">
+    <origin
+      xyz="0.019209760005139 -0.0675469356726254 0.0198747840085588"
+      rpy="7.70816303271424E-16 -0.450566111790748 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="thumb_meta" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="thumb_inter">
+    <inertial>
+      <origin
+        xyz="0.000451398037093289 0.020613202244871 -9.10600556289498E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0203008345815764" />
+      <inertia
+        ixx="7.96942669235314E-06"
+        ixy="-5.03458835216604E-07"
+        ixz="2.79508174150751E-09"
+        iyy="6.17359646262548E-07"
+        iyz="2.42893830063001E-08"
+        izz="8.58460841090492E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/thumb_inter.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/thumb_inter.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thumb_inter_to_meta"
+    type="continuous">
+    <origin
+      xyz="0 0.0450000000000087 0"
+      rpy="0.135013093158482 1.5707963267949 0" />
+    <parent
+      link="thumb_meta" />
+    <child
+      link="thumb_inter" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="thumb_distal">
+    <inertial>
+      <origin
+        xyz="-0.00121408448443803 0.00515112279717869 -0.000266659121916014"
+        rpy="0 0 0" />
+      <mass
+        value="0.0127860282382531" />
+      <inertia
+        ixx="6.53141207380862E-07"
+        ixy="-1.14653739086533E-07"
+        ixz="5.94121376775632E-09"
+        iyy="2.05657602789935E-07"
+        iyz="3.36190737594443E-08"
+        izz="8.55328642758697E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/thumb_distal.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/thumb_distal.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thumb_distal_to_inter"
+    type="continuous">
+    <origin
+      xyz="0.00279999999999976 0.0494997311142436 -0.000163155195877576"
+      rpy="0.169380486675781 5.55111512312578E-17 5.82867087928207E-16" />
+    <parent
+      link="thumb_inter" />
+    <child
+      link="thumb_distal" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="Index_meta">
+    <inertial>
+      <origin
+        xyz="-4.10385928154636E-05 0.0205408588012685 0.00172784033827147"
+        rpy="0 0 0" />
+      <mass
+        value="0.020300838905472" />
+      <inertia
+        ixx="7.96942708675344E-06"
+        ixy="-5.01742443983291E-07"
+        ixz="-4.16321516147892E-08"
+        iyy="6.7510139424776E-07"
+        iyz="-6.76238564015784E-07"
+        izz="8.52686706791645E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/Index_meta.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/Index_meta.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Index_meta_to_base"
+    type="continuous">
+    <origin
+      xyz="0.05515034993821 -0.0675469356726246 0.115314806633858"
+      rpy="1.5707963267949 0.0482191995046216 -2.95476729400594E-18" />
+    <parent
+      link="base_link" />
+    <child
+      link="Index_meta" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Index_inter">
+    <inertial>
+      <origin
+        xyz="0.0121013985905616 0.0206047333141407 0.000597723366559624"
+        rpy="0 0 0" />
+      <mass
+        value="0.0203008390639351" />
+      <inertia
+        ixx="7.96942710425384E-06"
+        ixy="-5.03271225635485E-07"
+        ixz="-1.40281499936136E-08"
+        iyy="6.24631949891235E-07"
+        iyz="-2.41820573352517E-07"
+        izz="8.57733652803394E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/Index_inter.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/Index_inter.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Index_inter_to_meta"
+    type="continuous">
+    <origin
+      xyz="-0.0102424371975805 0.0493211155528963 0.00420446912437898"
+      rpy="0.0850412363358472 3.8068506680311E-15 -9.71445146547012E-16" />
+    <parent
+      link="Index_meta" />
+    <child
+      link="Index_inter" />
+    <axis
+      xyz="-0.0433901391610683 0.858916279225826 -0.510274554631569" />
+  </joint>
+  <link
+    name="Index_distal">
+    <inertial>
+      <origin
+        xyz="0.011335914605667 0.0051569682724758 -0.000104179090270301"
+        rpy="0 0 0" />
+      <mass
+        value="0.0127860296240113" />
+      <inertia
+        ixx="6.53141153433073E-07"
+        ixy="-1.14784086482922E-07"
+        ixz="2.32472970560462E-09"
+        iyy="2.04184777969366E-07"
+        iyz="1.30868227360477E-08"
+        izz="8.56801279804738E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/Index_distal.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/Index_distal.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Index_distal_to_inter"
+    type="continuous">
+    <origin
+      xyz="0.00190000000000003 0.0494775444864091 0.001490835871383"
+      rpy="0.0301224515133165 1.62666352588235E-13 4.77652355984014E-15" />
+    <parent
+      link="Index_inter" />
+    <child
+      link="Index_distal" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="middle_meta">
+    <inertial>
+      <origin
+        xyz="0.0121013958630512 0.0206033453170662 0.000643940922438316"
+        rpy="0 0 0" />
+      <mass
+        value="0.0203008295218199" />
+      <inertia
+        ixx="7.96942629285279E-06"
+        ixy="-5.03238415263321E-07"
+        ixz="-1.51570254822738E-08"
+        iyy="6.25756756631991E-07"
+        iyz="-2.59657099663674E-07"
+        izz="8.57621074423836E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/middle_meta.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/middle_meta.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="middle_meta_to_base"
+    type="continuous">
+    <origin
+      xyz="0.0148769717121654 -0.0675469356726257 0.111042118644561"
+      rpy="1.57079632679557 -0.107403493214135 -6.30269289035029E-12" />
+    <parent
+      link="base_link" />
+    <child
+      link="middle_meta" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="middle_inter">
+    <inertial>
+      <origin
+        xyz="0.0118908509528186 0.0157420746042994 0.00010644703838085"
+        rpy="0 0 0" />
+      <mass
+        value="0.0173715633219718" />
+      <inertia
+        ixx="5.11297334243985E-06"
+        ixy="-3.79993972632805E-07"
+        ixz="-1.98715869637498E-09"
+        iyy="4.00389105816473E-07"
+        iyz="-4.30146924905699E-08"
+        izz="5.510611213924E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/middle_inter.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/middle_inter.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="middle_inter_to_meta"
+    type="continuous">
+    <origin
+      xyz="0.00189999999998808 0.049474075860848 0.00160181700362946"
+      rpy="0.0323655898320461 6.5518511273338E-12 9.2148511043888E-15" />
+    <parent
+      link="middle_meta" />
+    <child
+      link="middle_inter" />
+    <axis
+      xyz="0.09649892443135 0.880452882657808 -0.464209736006418" />
+  </joint>
+  <link
+    name="middle_distal">
+    <inertial>
+      <origin
+        xyz="-0.000122162122210154 0.00507395561040364 0.000927438982717771"
+        rpy="0 0 0" />
+      <mass
+        value="0.012786027165172" />
+      <inertia
+        ixx="6.53141172142094E-07"
+        ixy="-1.1293745176837E-07"
+        ixz="-2.06371785964382E-08"
+        iyy="2.25074855995339E-07"
+        iyz="-1.15620016000655E-07"
+        izz="8.3591152010311E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/middle_distal.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/middle_distal.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="middle_distal_to_inter"
+    type="continuous">
+    <origin
+      xyz="0.0133580788239724 0.0494982210305766 0.00041966034683967"
+      rpy="0.00847808836902598 -2.85456626454119E-13 7.58815553469298E-16" />
+    <parent
+      link="middle_inter" />
+    <child
+      link="middle_distal" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="ring_meta">
+    <inertial>
+      <origin
+        xyz="0.0121013939588269 -2.31193823498205E-05 -0.0206133932004613"
+        rpy="0 0 0" />
+      <mass
+        value="0.020300827519575" />
+      <inertia
+        ixx="7.96942622276496E-06"
+        ixy="1.13567092702337E-09"
+        ixz="5.03465516984217E-07"
+        iyy="8.58468131874584E-06"
+        iyz="1.97183393718797E-09"
+        izz="6.172859372683E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/ring_meta.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/ring_meta.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ring_meta_to_inter"
+    type="continuous">
+    <origin
+      xyz="-0.0110284094329051 -0.0675469356726257 0.102499218896607"
+      rpy="-3.06298121523762 -0.257909265986246 2.14032031088432E-15" />
+    <parent
+      link="base_link" />
+    <child
+      link="ring_meta" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="ring_inter">
+    <inertial>
+      <origin
+        xyz="0.0132837272090998 -3.9404089127712E-05 -0.0351439413935212"
+        rpy="0 0 0" />
+      <mass
+        value="0.011911029286377" />
+      <inertia
+        ixx="1.8842081734841E-06"
+        ixy="5.80751975649222E-10"
+        ixz="8.7830124980322E-09"
+        iyy="2.27560256382503E-06"
+        iyz="8.79166164627916E-09"
+        izz="3.93409945414309E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/ring_inter.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/ring_inter.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ring_inter_to_meta"
+    type="continuous">
+    <origin
+      xyz="0.00189999999999703 0 -0.0494999999999996"
+      rpy="-0.00105333445261117 -1.32463041348674E-13 -5.0460744578379E-15" />
+    <parent
+      link="ring_meta" />
+    <child
+      link="ring_inter" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="ring_distal">
+    <inertial>
+      <origin
+        xyz="0.0113359172495566 -0.000266659286230451 -0.00515112249143102"
+        rpy="0 0 0" />
+      <mass
+        value="0.0127860269434878" />
+      <inertia
+        ixx="6.53141182280386E-07"
+        ixy="5.94121753112401E-09"
+        ixz="1.14653703498142E-07"
+        iyy="8.55328730785794E-07"
+        iyz="-3.36190678534968E-08"
+        izz="2.0565771483245E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/ring_distal.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/ring_distal.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ring_distal_to_inter"
+    type="continuous">
+    <origin
+      xyz="0.00189999999999054 0 -0.0494999999999988"
+      rpy="0.0870625717164134 2.67642151762589E-13 1.39269004924754E-14" />
+    <parent
+      link="ring_inter" />
+    <child
+      link="ring_distal" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="little_meta">
+    <inertial>
+      <origin
+        xyz="-0.0121013934825813 -2.31196156114388E-05 0.0206133916158283"
+        rpy="0 0 0" />
+      <mass
+        value="0.0203008297615259" />
+      <inertia
+        ixx="7.96942656839436E-06"
+        ixy="-1.13567709379344E-09"
+        ixz="5.0346575286303E-07"
+        iyy="8.58468161842693E-06"
+        iyz="-1.97186106827851E-09"
+        izz="6.17285895068536E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/little_meta.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/little_meta.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="little_meta_to_base"
+    type="continuous">
+    <origin
+      xyz="-0.0352498464430395 -0.0675469356726257 0.0868736617741635"
+      rpy="6.69719326685307E-17 0.417098184878571 -3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="little_meta" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="little_inter">
+    <inertial>
+      <origin
+        xyz="-2.31194315885447E-05 0.0121013934342035 0.0206133913335622"
+        rpy="0 0 0" />
+      <mass
+        value="0.0203008301768936" />
+      <inertia
+        ixx="8.58468166599254E-06"
+        ixy="1.13567236905143E-09"
+        ixz="-1.97184252984324E-09"
+        iyy="7.96942661749542E-06"
+        iyz="-5.03465754627411E-07"
+        izz="6.17285890468515E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/little_inter.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/little_inter.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="little_inter_to_meta"
+    type="continuous">
+    <origin
+      xyz="-0.00189999999999864 0 0.0495000000000005"
+      rpy="1.26959379266411E-13 0.0598635876171449 1.57079632679514" />
+    <parent
+      link="little_meta" />
+    <child
+      link="little_inter" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="little_distal">
+    <inertial>
+      <origin
+        xyz="0.0113359167321956 -0.000266659171256851 -0.00515112271997442"
+        rpy="0 0 0" />
+      <mass
+        value="0.0127860287639474" />
+      <inertia
+        ixx="6.53141114318785E-07"
+        ixy="5.94121965267924E-09"
+        ixz="1.14653813393836E-07"
+        iyy="8.55328611363276E-07"
+        iyz="-3.36190608511991E-08"
+        izz="2.056576622836E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/little_distal.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_hand/meshes/little_distal.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="little_distal_to_inter"
+    type="continuous">
+    <origin
+      xyz="0 0.00190000000000699 0.049500000000001"
+      rpy="-3.02609563008208 1.20710788280411E-13 1.57079632679465" />
+    <parent
+      link="little_inter" />
+    <child
+      link="little_distal" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>

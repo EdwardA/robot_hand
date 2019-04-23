@@ -1,0 +1,1 @@
+controller_joint_names: ['thumb_meta_to_base', 'thumb_inter_to_meta', 'thumb_distal_to_inter', 'Index_meta_to_base', 'Index_inter_to_meta', 'Index_distal_to_inter', 'middle_meta_to_base', 'middle_inter_to_meta', 'middle_distal_to_inter', 'ring_meta_to_inter', 'ring_inter_to_meta', 'ring_distal_to_inter', 'little_meta_to_base', 'little_inter_to_meta', 'little_distal_to_inter', ]
