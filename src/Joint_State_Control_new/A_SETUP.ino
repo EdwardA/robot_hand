@@ -25,13 +25,13 @@ char potOne;
 char potTwo;        //positional control pots
 char potThree;
 
-int fingerJointOne[] = {9, 5, 17, 1, 2, 0, 0, 0}; //control properties for single joint: Kp, Ki, Kd, Motor pin 1, Motor pin 2, output, setpoint, angle
-int fingerJointTwo[] = {9, 5, 17, 3, 4, 0, 0, 0}; //control properties for single joint: Kp, Ki, Kd, Motor pin 1, Motor pin 2, output, setpoint, angle
-int fingerJointThree[] = {9, 5, 17, 5, 6, 0, 0, 0}; //control properties for single joint: Kp, Ki, Kd, Motor pin 1, Motor pin 2, output, setpoint, angle
+int fingerJointOne[] = {9, 5, 17, 2, 3, 0, 0, 0, 19}; //control properties for single joint: Kp, Ki, Kd, Motor pin 1, Motor pin 2, output, setpoint, angle, analog sensor pin
+int fingerJointTwo[] = {9, 5, 17, 4, 5, 0, 0, 0, 18}; //control properties for single joint: Kp, Ki, Kd, Motor pin 1, Motor pin 2, output, setpoint, angle, analog sensor pin
+int fingerJointThree[] = {9, 5, 17, 6, 7, 0, 0, 0, 17}; //control properties for single joint: Kp, Ki, Kd, Motor pin 1, Motor pin 2, output, setpoint, angle, analog sensor pin
 
-int thumbJointOne[] = {9, 5, 17, 7, 8, 0, 0, 0}; //control properties for single joint: Kp, Ki, Kd, Motor pin 1, Motor pin 2, output, setpoint, angle
-int thumbJointTwo[] = {9, 5, 17, 9, 10, 0, 0, 0}; //control properties for single joint: Kp, Ki, Kd, Motor pin 1, Motor pin 2, output, setpoint, angle
-int thumbJointThree[] = {9, 5, 17, 11, 12, 0, 0, 0}; //control properties for single joint: Kp, Ki, Kd, Motor pin 1, Motor pin 2, output, setpoint, angle
+int thumbJointOne[] = {9, 5, 17, 8, 9, 0, 0, 0, 16}; //control properties for single joint: Kp, Ki, Kd, Motor pin 1, Motor pin 2, output, setpoint, angle, analog sensor pin
+int thumbJointTwo[] = {9, 5, 17, 23, 22, 0, 0, 0, 15}; //control properties for single joint: Kp, Ki, Kd, Motor pin 1, Motor pin 2, output, setpoint, angle, analog sensor pin
+int thumbJointThree[] = {9, 5, 17, 21, 20, 0, 0, 0, 14}; //control properties for single joint: Kp, Ki, Kd, Motor pin 1, Motor pin 2, output, setpoint, angle, analog sensor pin
 
 double kp = 9, ki = 5 , kd = 17, input, output, setpoint;             // PID values for control
 PID myPID(&input, &output, &setpoint, kp, ki, kd, DIRECT);
@@ -46,11 +46,8 @@ void setup() {
   analogWriteFrequency(3, 234375);
   analogWriteFrequency(4, 234375);
   analogWriteFrequency(5, 234375);
-  pinMode(2, OUTPUT);
-  pinMode(3, OUTPUT);
-  pinMode(4, OUTPUT);
-  pinMode(5, OUTPUT);
-  pinMode(6, INPUT);
+
+
 
   ROSsetup();
 
